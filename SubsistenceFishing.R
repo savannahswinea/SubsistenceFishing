@@ -1,5 +1,4 @@
-# Replication materials for "Protect access to fishing for food, from shore 
-# to table to community
+# Replication materials for "Subsistence fishing patterns near food deserts"
 
 # Source: github.com/savannahswinea/SubsistenceFishing
 
@@ -64,59 +63,61 @@ df <- df %>%
                   "C_TroutSpec_K", "C_TroutSpec_R", "C_TroutW_K", "C_TroutW_R", 
                   "C_Whiting_K", "C_Whiting_R"), 
                 ~ ifelse(is.na(.) | . == " ", 0, .))) %>%
-  mutate(C_AtlanticCroaker = rowSums(select(., C_AtlanticCroaker_K, C_AtlanticCroaker_R), na.rm = TRUE)) %>%
-  mutate(C_Bass = rowSums(select(., C_Bass_K, C_Bass_R), na.rm = TRUE)) %>%
-  mutate(C_BlueCrab = rowSums(select(., C_BlueCrab_K, C_BlueCrab_R), na.rm = TRUE)) %>%
-  mutate(C_Bream = rowSums(select(., C_Bream_K, C_Bream_R), na.rm = TRUE)) %>%
-  mutate(C_Catfish_K = rowSums(select(., C_CatfishSpp_K, C_CatfishFresh_K, C_CatfishG_K, 
+  mutate(C_AtlanticCroaker = rowSums(dplyr::select(., C_AtlanticCroaker_K, C_AtlanticCroaker_R), na.rm = TRUE)) %>%
+  mutate(C_Bass = rowSums(dplyr::select(., C_Bass_K, C_Bass_R), na.rm = TRUE)) %>%
+  mutate(C_BlueCrab = rowSums(dplyr::select(., C_BlueCrab_K, C_BlueCrab_R), na.rm = TRUE)) %>%
+  mutate(C_Bream = rowSums(dplyr::select(., C_Bream_K, C_Bream_R), na.rm = TRUE)) %>%
+  mutate(C_Catfish_K = rowSums(dplyr::select(., C_CatfishSpp_K, C_CatfishFresh_K, C_CatfishG_K, 
                                       C_CatfishH_K, C_CatfishSalt_K), na.rm = TRUE)) %>%
-  mutate(C_Catfish_R = rowSums(select(., C_CatfishSpp_R, C_CatfishFresh_R, C_CatfishG_R, 
+  mutate(C_Catfish_R = rowSums(dplyr::select(., C_CatfishSpp_R, C_CatfishFresh_R, C_CatfishG_R, 
                                       C_CatfishH_R, C_CatfishSalt_R), na.rm = TRUE)) %>%
-  mutate(C_Catfish = rowSums(select(., C_CatfishSpp_K, C_CatfishSpp_R, C_CatfishFresh_K, 
+  mutate(C_Catfish = rowSums(dplyr::select(., C_CatfishSpp_K, C_CatfishSpp_R, C_CatfishFresh_K, 
                                     C_CatfishFresh_R, C_CatfishG_K, C_CatfishG_R, C_CatfishH_K, 
                                     C_CatfishH_R, C_CatfishSalt_K, C_CatfishSalt_R), na.rm = TRUE)) %>%
-  mutate(C_Crappie = rowSums(select(., C_Crappie_K, C_Crappie_R), na.rm = TRUE)) %>%
-  mutate(C_Drum_K = rowSums(select(., C_DrumSpp_K, C_DrumB_K, C_DrumP_K, C_DrumR_K, 
+  mutate(C_Crappie = rowSums(dplyr::select(., C_Crappie_K, C_Crappie_R), na.rm = TRUE)) %>%
+  mutate(C_Drum_K = rowSums(dplyr::select(., C_DrumSpp_K, C_DrumB_K, C_DrumP_K, C_DrumR_K, 
                                    C_Redfish_K), na.rm = TRUE)) %>%
-  mutate(C_Drum_R = rowSums(select(., C_DrumSpp_R, C_DrumB_R, C_DrumP_R, C_DrumR_R, 
+  mutate(C_Drum_R = rowSums(dplyr::select(., C_DrumSpp_R, C_DrumB_R, C_DrumP_R, C_DrumR_R, 
                                    C_Redfish_R), na.rm = TRUE)) %>%
-  mutate(C_Drum = rowSums(select(., C_DrumSpp_K, C_DrumB_K, C_DrumP_K, C_DrumR_K, 
+  mutate(C_Drum = rowSums(dplyr::select(., C_DrumSpp_K, C_DrumB_K, C_DrumP_K, C_DrumR_K, 
                                  C_Redfish_K, C_DrumSpp_R, C_DrumB_R, C_DrumP_R, 
                                  C_DrumR_R, C_Redfish_R), na.rm = TRUE)) %>%
-  mutate(C_Flounder = rowSums(select(., C_Flounder_K, C_Flounder_R), na.rm = TRUE)) %>%
-  mutate(C_Grouper = rowSums(select(., C_Grouper_K, C_Grouper_R), na.rm = TRUE)) %>%
-  mutate(C_JackCrev = rowSums(select(., C_JackCrev_K, C_JackCrev_R), na.rm = TRUE)) %>%
-  mutate(C_Mackerel = rowSums(select(., C_Mackerel_K, C_Mackerel_R), na.rm = TRUE)) %>%
-  mutate(C_MahiMahi = rowSums(select(., C_MahiMahi_K, C_MahiMahi_R), na.rm = TRUE)) %>%
-  mutate(C_Mullet_K = rowSums(select(., C_MulletSpp_K, C_MulletG_K, C_MulletB_K), 
+  mutate(C_Flounder = rowSums(dplyr::select(., C_Flounder_K, C_Flounder_R), na.rm = TRUE)) %>%
+  mutate(C_Grouper = rowSums(dplyr::select(., C_Grouper_K, C_Grouper_R), na.rm = TRUE)) %>%
+  mutate(C_JackCrev = rowSums(dplyr::select(., C_JackCrev_K, C_JackCrev_R), na.rm = TRUE)) %>%
+  mutate(C_Mackerel = rowSums(dplyr::select(., C_Mackerel_K, C_Mackerel_R), na.rm = TRUE)) %>%
+  mutate(C_MahiMahi = rowSums(dplyr::select(., C_MahiMahi_K, C_MahiMahi_R), na.rm = TRUE)) %>%
+  mutate(C_Mullet_K = rowSums(dplyr::select(., C_MulletSpp_K, C_MulletG_K, C_MulletB_K), 
                               na.rm = TRUE)) %>%
-  mutate(C_Mullet_R = rowSums(select(., C_MulletSpp_R, C_MulletG_R, C_MulletB_R), 
+  mutate(C_Mullet_R = rowSums(dplyr::select(., C_MulletSpp_R, C_MulletG_R, C_MulletB_R), 
                               na.rm = TRUE)) %>%
-  mutate(C_Mullet = rowSums(select(., C_MulletSpp_K, C_MulletG_K, C_MulletB_K, C_MulletSpp_R, 
+  mutate(C_Mullet = rowSums(dplyr::select(., C_MulletSpp_K, C_MulletG_K, C_MulletB_K, C_MulletSpp_R, 
                                    C_MulletG_R, C_MulletB_R), na.rm = TRUE)) %>%
-  mutate(C_Perch = rowSums(select(., C_Perch_K, C_Perch_R), na.rm = TRUE)) %>%
-  mutate(C_Shark = rowSums(select(., C_Shark_K, C_Shark_R), na.rm = TRUE)) %>%
-  mutate(C_Sheepshead = rowSums(select(., C_Sheepshead_K, C_Sheepshead_R), na.rm = TRUE)) %>%
-  mutate(C_Snap_K = rowSums(select(., C_SnapSpp_K, C_SnapMang_K, C_SnapRed_K), 
+  mutate(C_Perch = rowSums(dplyr::select(., C_Perch_K, C_Perch_R), na.rm = TRUE)) %>%
+  mutate(C_Shark = rowSums(dplyr::select(., C_Shark_K, C_Shark_R), na.rm = TRUE)) %>%
+  mutate(C_Sheepshead = rowSums(dplyr::select(., C_Sheepshead_K, C_Sheepshead_R), na.rm = TRUE)) %>%
+  mutate(C_Snap_K = rowSums(dplyr::select(., C_SnapSpp_K, C_SnapMang_K, C_SnapRed_K), 
                             na.rm = TRUE)) %>%
-  mutate(C_Snap_R = rowSums(select(., C_SnapSpp_R, C_SnapMang_R, C_SnapRed_R), 
+  mutate(C_Snap_R = rowSums(dplyr::select(., C_SnapSpp_R, C_SnapMang_R, C_SnapRed_R), 
                             na.rm = TRUE)) %>%
-  mutate(C_Snap = rowSums(select(., C_SnapSpp_K, C_SnapMang_K, C_SnapRed_K, C_SnapSpp_R, 
+  mutate(C_Snap = rowSums(dplyr::select(., C_SnapSpp_K, C_SnapMang_K, C_SnapRed_K, C_SnapSpp_R, 
                                  C_SnapMang_R, C_SnapRed_R), na.rm = TRUE)) %>%
-  mutate(C_Stingray = rowSums(select(., C_Stingray_K, C_Stingray_R), na.rm = TRUE)) %>%
-  mutate(C_Trout_K = rowSums(select(., C_TroutSpp_K, C_TroutSpec_K, C_TroutW_K), 
+  mutate(C_Stingray = rowSums(dplyr::select(., C_Stingray_K, C_Stingray_R), na.rm = TRUE)) %>%
+  mutate(C_Trout_K = rowSums(dplyr::select(., C_TroutSpp_K, C_TroutSpec_K, C_TroutW_K), 
                              na.rm = TRUE)) %>%
-  mutate(C_Trout_R = rowSums(select(., C_TroutSpp_R, C_TroutSpec_R, C_TroutW_R), 
+  mutate(C_Trout_R = rowSums(dplyr::select(., C_TroutSpp_R, C_TroutSpec_R, C_TroutW_R), 
                              na.rm = TRUE)) %>%
-  mutate(C_Trout = rowSums(select(., C_TroutSpp_K, C_TroutSpec_K, C_TroutW_K, C_TroutSpp_R, 
+  mutate(C_Trout = rowSums(dplyr::select(., C_TroutSpp_K, C_TroutSpec_K, C_TroutW_K, C_TroutSpp_R, 
                                   C_TroutSpec_R, C_TroutW_R), na.rm = TRUE)) %>%
-  mutate(C_Whiting = rowSums(select(., C_Whiting_K, C_Whiting_R), na.rm = TRUE)) %>%
-  mutate(C_Total_K = rowSums(select(., c("C_AtlanticCroaker_K", "C_Bass_K", "C_BlueCrab_K", "C_Bream_K", "C_Catfish_K",
+  mutate(C_Whiting = rowSums(dplyr::select(., C_Whiting_K, C_Whiting_R), na.rm = TRUE)) %>%
+  mutate(C_Total_K = rowSums(dplyr::select(., c("C_AtlanticCroaker_K", "C_Bass_K", "C_BlueCrab_K", "C_Bream_K", "C_Catfish_K",
                                          "C_Crappie_K", "C_Drum_K", "C_Flounder_K", "C_Grouper_K", "C_Whiting_K",
                                          "C_JackCrev_K", "C_Mackerel_K", "C_MahiMahi_K", "C_Mullet_K", "C_Perch_K",
                                          "C_Shark_K", "C_Sheepshead_K", "C_Snap_K", "C_Stingray_K", 
                                          "C_Trout_K")), na.rm = TRUE)) %>%
   mutate(CPUE_K = C_Total_K / TimeFished)
+
+
 
 #____________________________________________________________________________________________________________________
 # Dummy Variable: Subsistence Fishermen
@@ -125,8 +126,70 @@ df <- df %>%
   filter(!is.na(BroughtHomeFish) & !is.na(PercLocalCatch)) %>%
   mutate(Subsistence = if_else(BroughtHomeFish == "Yes" & SubsistenceMotivation == 1 & PercLocalCatch > 0, 1, 0))
 
-# Proportion of respondents categorized as subsistence vs. non-subsistence fishermen
-setNames(prop.table(table(df$Subsistence)*100), c("Non-Subsistence", "Subsistence"))
+#____________________________________________________________________________________________________________________
+# Differences in fishing motivations for subsistence vs. non-subsistence fishermen
+
+df <- df %>%
+  mutate_at(vars("AccessLV", "AestheticsLV", "CommunityLV", "ConvenienceLV", "CultureLV",
+                 "FishLV", "HappyLV", "HealthyLV", "HistoricLV", "InfrastructureLV", "ParkingLV", 
+                 "PastLV", "SafetyLV", "SpiritualLV", "TherapeuticLV", "WildernessLV"), 
+            ~ case_when(
+              is.na(.) | . == " " ~ 0,
+              TRUE ~ 1)) %>%
+  mutate(
+    totalMotivations = rowSums(
+      across(c(AccessLV, AestheticsLV, CommunityLV, ConvenienceLV, CultureLV,
+               FishLV, HappyLV, HealthyLV, HistoricLV, InfrastructureLV, ParkingLV, 
+               PastLV, SafetyLV, SpiritualLV, TherapeuticLV, WildernessLV)),
+      na.rm = TRUE
+    )
+  )
+
+# Average number of motivations held by subsistence vs. non-subsistence fishermen
+df %>%
+  group_by(Subsistence) %>%
+  summarise(avg_sum = mean(totalMotivations, na.rm = TRUE))
+
+df %>%
+  dplyr::select(Subsistence, SubsistenceMotivation, ends_with("LV")) %>%
+  pivot_longer(
+    cols = c(ends_with("LV"), SubsistenceMotivation),
+    names_to = "Variable",
+    values_to = "Value"
+  ) %>%
+  group_by(Subsistence, Variable) %>%
+  summarise(prop_1 = mean(Value == 1, na.rm = TRUE), .groups = "drop") %>%
+  pivot_wider(names_from = Subsistence, values_from = prop_1, names_prefix = "SubFish_") %>%
+  mutate(diff = SubFish_1 - SubFish_0) %>%
+  arrange(desc(diff)) %>%
+  mutate(Variable = factor(Variable, levels = Variable)) %>%
+  ggplot(aes(x = Variable, y = diff, fill = diff > 0)) +
+  geom_col() +
+  coord_flip() +
+  labs(
+    x = "Motivation",
+    y = "Difference in proportion of subsistence vs. non-subsistence fishermen reporting motivations"
+  ) +
+  scale_y_continuous(labels = scales::percent_format()) +
+  scale_fill_manual(values = c("TRUE" = "steelblue", "FALSE" = "tomato"),
+                    guide = "none") +
+  theme_minimal()
+
+#____________________________________________________________________________________________________________________
+# Re-code variables for who respondents are fishing with and how often
+
+df <- df %>%
+  mutate(across(c(FishAloneFreq, FishFamFreq, FishFriendsFreq), ~ case_when(
+                    . == "Never" ~ 1,
+                    . == "Rarely" ~ 2,
+                    . == "Sometimes" ~ 3,
+                    . == "Often" ~ 4,
+                    . == "Always" ~ 5,
+                    TRUE ~ NA )))
+
+wilcox.test(FishAloneFreq ~ Subsistence, data = df)
+wilcox.test(FishFamFreq ~ Subsistence, data = df)
+wilcox.test(FishFriendsFreq ~ Subsistence, data = df)
 
 #____________________________________________________________________________________________________________________
 # PERMANOVA: Sharing catch with multiple social groups for subsistence vs. non-subsistence fishermen
@@ -146,13 +209,13 @@ perm_share_sub
 # PERMANOVA: Target fish groups for subsistence vs. non-subsistence fishermen
 
 df_fishtarget_sub <- df %>%
-  filter(rowSums(select(., 
+  filter(rowSums(dplyr::select(., 
                         "T_Anything", "T_AtlanticCroaker", "T_Bass", "T_BlueCrab", "T_Bream", "T_Catfish",
                         "T_Crappie", "T_RedDrum", "T_OtherDrum", "T_Flounder", "T_Grouper", "T_Mackerel", "T_MahiMahi", 
                         "T_Mullet", "T_Perch", "T_Shark", "T_Sheepshead", "T_Shrimp", "T_Snap", "T_Trout")) > 0)
 
 fishtarget_sub <- df_fishtarget_sub %>%
-  select("T_Anything", "T_AtlanticCroaker", "T_Bass", "T_BlueCrab", "T_Bream", "T_Catfish",
+  dplyr::select("T_Anything", "T_AtlanticCroaker", "T_Bass", "T_BlueCrab", "T_Bream", "T_Catfish",
          "T_Crappie", "T_RedDrum", "T_OtherDrum", "T_Flounder", "T_Grouper", "T_Mackerel", "T_MahiMahi", 
          "T_Mullet", "T_Perch", "T_Shark", "T_Sheepshead", "T_Shrimp", "T_Snap", "T_Trout") %>%
   mutate_all(~ ifelse(. > 0, 1, 0))
@@ -188,11 +251,20 @@ wilcox.test(FishAvid ~ Subsistence, data = df)
 # The number of years fished is similar for subsistence and non-subsistence fishermen
 wilcox.test(YearsFishing ~ Subsistence, data = df)
 
+# Checking that selling and trading do not differ across subsistence and non-subsistence fishermen
+df_st <- df %>%
+  mutate(SellTrade = case_when(
+    SellTrade == "Never" ~ 1,
+    SellTrade == "Rarely"  ~ 2,
+    SellTrade == "Sometimes"  ~ 3,
+    SellTrade == "Often" ~ 4,
+    SellTrade == "Always" ~ 5,
+    TRUE ~ NA))
+
+wilcox.test(SellTrade ~ Subsistence, data = df_st)
+
 #____________________________________________________________________________________________________________________
 # Target Fish Groups for Subsistence vs. Non-Subsistence Fishermen (Fig. 2a)
-
-library(ggalluvial)
-
 df %>%
   group_by(Subsistence) %>%
   summarise(across(starts_with("T_"), ~ mean(. == 1), .names = "prop_{col}")) %>%
@@ -202,34 +274,27 @@ df %>%
   mutate(Species = gsub("prop_", "", Species)) %>%
   filter(Species %in% c("T_Anything", "T_AtlanticCroaker", "T_Bass", "T_BlueCrab",
                         "T_RedDrum", "T_Flounder", "T_OtherDrum", "T_Trout")) %>%
-  mutate(Species = factor(Species, levels = c("T_Anything", "T_BlueCrab", "T_RedDrum", "T_Trout",
-                                              "T_Flounder", "T_OtherDrum", "T_AtlanticCroaker", "T_Bass"),
-                          labels = c("Anything", "Blue Crab", "Red Drum", "Trout\nspp.", "Flounder\nspp.", 
-                                     "Drum spp.\n(excl.\nRed Drum)", "Atlantic\nCroaker", "Bass\nspp.")),
-         Subsistence = factor(Subsistence, labels = c("Non-Subsistence", "Subsistence")),
-         FlowWidth = Proportion * 100) %>%
-  ggplot(aes(axis1 = fct_rev(Species), axis2 = Subsistence, y = FlowWidth)) +
-  geom_alluvium(aes(fill = Species), width = 1/50) +
-  geom_stratum(fill = "white", color = "black", width = 1/50) +
-  scale_x_discrete(limits = c("Fishing Type", "Target Species"), expand = c(0.15, 0.05)) +
-  scale_fill_brewer(palette = "RdYlBu", name = "Species") +
-  theme_void() +
-  labs(x = "", y = "") +
-  theme(legend.position = "none") +
-  coord_flip() +
-  guides(fill=guide_legend(title="Fishing\nTargets")) +
-  theme(legend.position = "bottom",
-        legend.key.size = unit(1.5, 'cm'),
-        legend.title = element_text(size = 20),
-        legend.text = element_text(size = 12))
-
+  mutate(Species = factor(Species, levels = c("T_Anything",  "T_BlueCrab", "T_RedDrum", "T_Trout",
+                                              "T_Flounder", "T_OtherDrum", "T_AtlanticCroaker", "T_Bass")),
+         Subsistence = factor(Subsistence, labels = c("Non-Subsistence", "Subsistence")),) %>%
+  ggplot(aes(x = Proportion*100, y = Subsistence, fill = Species)) +
+  geom_bar(stat = "identity", show.legend = FALSE) +
+  facet_wrap(~ Species, scales = "fixed", nrow = 2,
+             labeller = labeller(Species = c("T_Anything" = "Anything", "T_BlueCrab" = "Blue Crab", "T_RedDrum" = "Red Drum", 
+                                             "T_Trout" = "Trout spp.", "T_Flounder" = "Flounder spp.", "T_OtherDrum" = "Drum spp.\nexcl. Red Drum", 
+                                             "T_AtlanticCroaker" = "Atlantic\nCroaker", "T_Bass" = "Bass spp."))) +
+  scale_x_continuous(labels = function(x) paste0(x, "%")) +
+  scale_fill_brewer(palette = "RdYlBu", guide = guide_legend(reverse = FALSE)) +
+  theme_bw(base_size = 14) +
+  labs(x = "Proportion of Respondents With Fish Target",
+       y = "")
 #____________________________________________________________________________________________________________________
 # Community Fish Sharing for Subsistence vs. Non-Subsistence Fishermen (Fig. 2b)
 
 df %>%
   mutate_at(vars(starts_with("ShareCatch")), 
           ~ ifelse(is.na(.) | . == " ", 2, 1)) %>%
-  select(Subsistence, ShareCatchHouse, ShareCatchNonHouse, ShareCatchNeighbors, ShareCatchFriends) %>%
+  dplyr::select(Subsistence, ShareCatchHouse, ShareCatchNonHouse, ShareCatchNeighbors, ShareCatchFriends) %>%
   group_by(Subsistence) %>%
   summarise(across(starts_with("ShareCatch"), ~ mean(. == 1), .names = "prop_{col}")) %>%
   pivot_longer(cols = starts_with("prop_ShareCatch"), 
@@ -250,10 +315,10 @@ df %>%
   ) +
   scale_color_manual(values = c("Non-Subsistence" = "#D1D1D1", "Subsistence" = "#156082")) +
   labs(
-    x = "Proportion of Respondents Who Shared Fish",
+    x = "Proportion of Fishers Who Shared\nWith Community",
     y = "",
     color = "") +
-  theme_classic(base_size = 14) +
+  theme_bw(base_size = 14) +
   theme(
     axis.text = element_text(size = 14),
     axis.title = element_text(size = 16),  
